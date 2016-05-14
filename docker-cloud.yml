@@ -1,0 +1,22 @@
+api:
+  image: ambethia/api
+  environment:
+    - NODE_ENV=production
+    - DATABASE_URL=postgres://ambethia@db/ambethia
+  links:
+    - db
+
+db:
+  image: postgres
+  environment:
+    POSTGRES_USER: ambethia
+
+web:
+  image: ambethia/platform
+  links:
+    - api
+  ports:
+    - 80:80
+    - 443:443
+  volumes:
+    - $HOME/.caddy:/root/.caddy

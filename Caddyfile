@@ -1,0 +1,15 @@
+www.ambethia.com {
+  gzip
+  log stdout
+  errors stdout
+  tls jasper@ambethia.com
+}
+
+https://api.ambethia.com {
+  tls jasper@ambethia.com
+  proxy / http://localhost:3000
+}
+
+ambethia.com {
+  redir https://www.ambethia.com{uri} 301
+}
