@@ -21,4 +21,4 @@ web:
     - 80:80
     - 443:443
   volumes:
-    - $HOME/.caddy:/root/.caddy
+    - ./caddy:/root/.caddy
