@@ -1,5 +1,6 @@
 api:
   image: ambethia/api
+  autoredeploy: true
   environment:
     - NODE_ENV=production
     - DATABASE_URL=postgres://ambethia@db/ambethia
@@ -13,6 +14,7 @@ db:
 
 web:
   image: ambethia/platform
+  autoredeploy: true
   links:
     - api
   ports:
