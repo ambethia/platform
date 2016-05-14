@@ -6,6 +6,8 @@ www.ambethia.com {
 }
 
 https://api.ambethia.com {
+  log stdout
+  errors stdout
   tls jasper@ambethia.com
   proxy / http://api:3000
 }
